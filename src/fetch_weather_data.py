@@ -53,7 +53,7 @@ else:
 file_exists = os.path.isfile(data_file)
 with open(data_file, 'a') as f:
     if not file_exists or os.path.getsize(data_file) == 0:
-        f.write('City,Date,Temp,Precip,PrecipProb,Snow,Windspeed,Humidity,Icon,Conditions\n') #... or whatever the specified data elements are above the api call
+        f.write('City,Date,Temp,Humidity,Precip,PrecipProb,Snow,Windspeed,Conditions,Icon\n') #... or whatever the specified data elements are above the api call
     
 
 
@@ -75,9 +75,9 @@ while calls_made_today < 10:
     end_date_obj = min(start_date_obj + timedelta(days=90), abs_end_date)
     current_end = end_date_obj.strftime('%Y-%m-%d')
 
-    elements = 'name,datetime,temp,precip,precipprob,snow,windspeed,humidity,icon,conditions'
+    elements = 'name,datetime,temp,humidity,precip,precipprob,snow,windspeed,conditions,icon'
     # call API
-    url = f'https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/London,UK/{current_start}/{current_end}?key={API_KEY}&contentType=csv&includeHeader=false&elements={elements}&unitGroup=uk'
+    url = f'https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/London,UK/{current_start}/{current_end}?key={API_KEY}&contentType=csv&elements={elements}&unitGroup=uk&include=days&options=noheaders'
     
     print(f'Fetching: {current_start} to {current_end}')
     response = requests.get(url)
@@ -94,7 +94,7 @@ while calls_made_today < 10:
             f.write(current_end)
 
         # prepare for next iteration
-        current_start = current_end
+        current_start = (end_date_obj + timedelta(days=1)).strftime('%Y-%m-%d')
         calls_made_today += 1
         time.sleep(2) # wait so server doesn't think it's a bot
     else:
