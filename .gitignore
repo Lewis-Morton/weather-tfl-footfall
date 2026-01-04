@@ -1,0 +1,14 @@
+# ignore environment variables
+.env
+
+# ignore venv
+tfl_venv
+
+# ignore all csv files in the data folder
+data/raw/*.csv
+
+# ignore state file
+last_date.txt
+
+# ignore Python cache folders
+__pycache__/
