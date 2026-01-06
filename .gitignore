@@ -4,8 +4,9 @@
 # ignore venv
 tfl_venv
 
-# ignore all csv files in the data folder
+# ignore all csv and db files in the data folder
 data/raw/*.csv
+data/processed/*.db
 
 # ignore state file
 last_date.txt
