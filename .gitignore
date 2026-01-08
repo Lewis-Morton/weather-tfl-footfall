@@ -13,3 +13,6 @@ last_date.txt
 
 # ignore Python cache folders
 __pycache__/
+
+# Visual Studio Code
+.vscode/
