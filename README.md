@@ -11,7 +11,7 @@ The project provides insights into:
 
 
 ## Dashboard Preview
-![TfL Weather Dashboard](pictures/screenshot.jpg)
+![TfL Weather Dashboard](pictures/Tfl_Weather.jpg)
 
 
 ## Tech Stack
@@ -42,6 +42,8 @@ The project provides insights into:
 
 
 ## Key Insights
-- It was found that 3 stations: Leicester Square, Piccadilly Circus, and Canary Wharf stand out as they have more footfall during rainy and overcast weather than during clear day.
-- Analysis revealed a 'shelter effect' where after the intial 'tipping point' of footfall dropping off at 2.5 mm of rain, footfall then rises again at 4 mm of rain possibly due to people taking shelter from heavy rain. 
+- Analysis revealed the rainfall 'tipping points' of footfall initially dropping off at 1 mm of rain, and then showing a more significant drop off after 4 mm of rain. 
 - The average temperature 'tipping point' seems to be 26 degrees celsuis at which point overall station footfall shows noticible decline.
+- It was found that 3 stations: Leicester Square, Piccadilly Circus, and Canary Wharf stand out as they have more footfall during rainy and overcast weather than during clear day.
+- The data reveals that the month of November is consistently the busiest month of each of the years in the data set.
+- These findings may be used to help make effective use of resources at specifc stations during certain weather conditions and time of the year.
